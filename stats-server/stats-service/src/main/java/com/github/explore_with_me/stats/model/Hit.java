@@ -1,4 +1,4 @@
-package ru.practicum.model;
+package com.github.explore_with_me.stats.model;
 
 import java.time.LocalDateTime;
 import javax.persistence.Column;

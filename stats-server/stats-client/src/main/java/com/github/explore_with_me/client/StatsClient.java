@@ -1,4 +1,4 @@
-package ru.practicum;
+package com.github.explore_with_me.client;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -6,8 +6,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
-import ru.practicum.input_dto.InputHitDto;
-import ru.practicum.output_dto.StatsDto;
+import com.github.explore_with_me.stats.input_dto.InputHitDto;
+import com.github.explore_with_me.stats.output_dto.StatsDto;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -1,4 +1,4 @@
-package ru.practicum;
+package com.github.explore_with_me.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

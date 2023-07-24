@@ -12,7 +12,7 @@ services:
       - DB_HOST=db
       - DB_PORT=5432
       - DB_NAME=exploreStats
-      - POSTGRES_USER=root
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=iamroot
       - STATS_SERVER_URL=http://stats-db:9090
   stats-db:
@@ -25,7 +25,7 @@ services:
 
     environment:
       - POSTGRES_DB=exploreStats
-      - POSTGRES_USER=root
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=iamroot
 
   main-server:
@@ -38,7 +38,7 @@ services:
     environment:
       - MAIN_SERVER_URL=http://main-server:8080
       - SPRING_DATASOURCE_MAIN=jdbc:postgresql://ewm-db:5432/exploreMain
-      - POSTGRES_USER_MAIN=root
+      - POSTGRES_USER_MAIN=postgres
       - POSTGRES_PASSWORD_MAIN=iamroot
 
   ewm-db:
@@ -51,5 +51,5 @@ services:
 
     environment:
       - POSTGRES_DB=exploreMain
-      - POSTGRES_USER=root
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=iamroot

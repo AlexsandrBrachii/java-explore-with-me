@@ -1,8 +1,8 @@
-package ru.practicum.service;
+package com.github.explore_with_me.stats.service;
 
 
-import ru.practicum.input_dto.InputHitDto;
-import ru.practicum.output_dto.StatsDto;
+import com.github.explore_with_me.stats.input_dto.InputHitDto;
+import com.github.explore_with_me.stats.output_dto.StatsDto;
 
 import java.time.LocalDateTime;
 import java.util.List;

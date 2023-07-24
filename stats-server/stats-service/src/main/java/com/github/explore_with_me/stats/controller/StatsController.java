@@ -1,4 +1,4 @@
-package ru.practicum.controller;
+package com.github.explore_with_me.stats.controller;
 
 
 import java.time.LocalDateTime;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import ru.practicum.input_dto.InputHitDto;
-import ru.practicum.output_dto.StatsDto;
-import ru.practicum.service.StatsService;
+import com.github.explore_with_me.stats.input_dto.InputHitDto;
+import com.github.explore_with_me.stats.output_dto.StatsDto;
+import com.github.explore_with_me.stats.service.StatsService;
 
 @RestController
 @RequiredArgsConstructor

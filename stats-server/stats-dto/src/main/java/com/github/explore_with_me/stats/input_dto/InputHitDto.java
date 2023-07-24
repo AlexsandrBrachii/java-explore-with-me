@@ -1,8 +1,7 @@
-package ru.practicum.input_dto;
+package com.github.explore_with_me.stats.input_dto;
 
 import java.time.LocalDateTime;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,15 +1,16 @@
-package ru.practicum.service;
+package com.github.explore_with_me.stats.service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.github.explore_with_me.stats.repository.HitRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.practicum.input_dto.InputHitDto;
-import ru.practicum.model.Hit;
-import ru.practicum.output_dto.StatsDto;
-import ru.practicum.repository.HitRepository;
+import com.github.explore_with_me.stats.input_dto.InputHitDto;
+import com.github.explore_with_me.stats.model.Hit;
+import com.github.explore_with_me.stats.output_dto.StatsDto;
 
 @Service
 @AllArgsConstructor
