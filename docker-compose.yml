@@ -20,8 +20,6 @@ services:
     container_name: DB_for_Stats
     ports:
       - "6541:5432"
-    volumes:
-      - /var/lib/postgresql/dataStats
 
     environment:
       - POSTGRES_DB=exploreStats
@@ -46,8 +44,6 @@ services:
     container_name: DB_for_Main
     ports:
       - "6542:5432"
-    volumes:
-      - /var/lib/postgresql/dataMain
 
     environment:
       - POSTGRES_DB=exploreMain
