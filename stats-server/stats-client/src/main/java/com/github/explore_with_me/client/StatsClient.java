@@ -16,7 +16,8 @@ import java.util.Map;
 
 public class StatsClient {
     @Value("${stats-service.server.url}")
-    private String STATS_URL;
+    private static String STATS_URL;
+
     private final RestTemplate restTemplate;
 
     public StatsClient() {
