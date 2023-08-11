@@ -34,17 +34,18 @@ public class StatsServiceImpl implements StatsService {
     public List<StatsDto> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, boolean unique) {
         List<StatsDto> stats = new ArrayList<>();
 
-        if (unique && uris != null) {
-            stats = hitRepository.getUniqueStatsByUrisAndTimestamps(start, end, uris);
-        }
-        if (!unique && uris != null) {
-            stats = hitRepository.getStatsByUrisAndTimestamps(start, end, uris);
-        }
-        if (!unique && uris == null) {
-            stats = hitRepository.getAllStats(start, end);
-        }
-        if (unique && uris == null) {
-            stats = hitRepository.getAllUniqueStats(start, end);
+        if (unique) {
+            if (uris == null) {
+                stats = hitRepository.getAllUniqueStats(start, end);
+            } else {
+                stats = hitRepository.getUniqueStatsByUrisAndTimestamps(start, end, uris);
+            }
+        } else {
+            if (uris == null) {
+                stats = hitRepository.getAllStats(start, end);
+            } else {
+                stats = hitRepository.getStatsByUrisAndTimestamps(start, end, uris);
+            }
         }
         return stats;
     }

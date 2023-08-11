@@ -1,5 +1,6 @@
 package com.github.explore_with_me.client;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -14,7 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 public class StatsClient {
-    private static final String STATS_URL = "http://localhost:9090";
+    @Value("${stats-service.server.url}")
+    private String STATS_URL;
     private final RestTemplate restTemplate;
 
     public StatsClient() {
