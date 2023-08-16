@@ -1,10 +1,5 @@
 package com.github.explore_with_me.main.category.service;
 
-/*import com.github.explore_with_me.main.category.dto.CategoryOutDto;
-import com.github.explore_with_me.main.category.dto.NewCategoryDto;
-import com.github.explore_with_me.main.category.mapper.CategoryMapper;
-import com.github.explore_with_me.main.category.model.Category;
-import com.github.explore_with_me.main.category.repository.CategoryRepository;*/
 import com.github.explore_with_me.main.category.dto.CategoryOutDto;
 import com.github.explore_with_me.main.category.dto.NewCategoryDto;
 import com.github.explore_with_me.main.category.mapper.CategoryMapper;
@@ -14,7 +9,6 @@ import com.github.explore_with_me.main.exception.model.ConflictException;
 import com.github.explore_with_me.main.exception.model.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

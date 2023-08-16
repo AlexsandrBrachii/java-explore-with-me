@@ -15,7 +15,6 @@ import com.github.explore_with_me.main.event.repository.EventRepository;
 import com.github.explore_with_me.main.exception.model.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
