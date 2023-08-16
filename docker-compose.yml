@@ -21,7 +21,7 @@ services:
     ports:
       - "6541:5432"
     volumes:
-      - /var/lib/postgresql/dataStats
+      - src/main/resources/application.properties
 
     environment:
       - POSTGRES_DB=exploreStats
@@ -47,7 +47,7 @@ services:
     ports:
       - "6542:5432"
     volumes:
-      - /var/lib/postgresql/dataMain
+      - src/main/resources/application.properties
 
     environment:
       - POSTGRES_DB=exploreMain
