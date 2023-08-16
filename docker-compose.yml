@@ -14,7 +14,7 @@ services:
       - DB_NAME=exploreStats
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=iamroot
-      - STATS_SERVER_URL=http://stats-db:9090
+      - STATS_SERVER_URL=http://stats-server:9090
   stats-db:
     image: postgres:15.2-alpine
     container_name: DB_for_Stats
