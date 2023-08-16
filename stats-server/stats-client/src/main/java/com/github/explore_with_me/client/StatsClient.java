@@ -12,13 +12,12 @@ import com.github.explore_with_me.stats.input_dto.InputHitDto;
 import com.github.explore_with_me.stats.output_dto.StatsDto;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
 @Component
 public class StatsClient {
-    @Value("${stats-service.server.url}")
-    private static String STATS_URL;
 
     private static final String STATS_URL_DOCKER = "http://stats-server:9090";
 
@@ -33,7 +32,11 @@ public class StatsClient {
         restTemplate.postForEntity(url, inputHitDto, Void.class);
     }
 
-    public List<StatsDto> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, boolean unique) {
+    public List<StatsDto> getStats(LocalDateTime startLocalDateTime, LocalDateTime endLocalDateTime, String[] uris,
+                                   boolean unique) {
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String start = startLocalDateTime.format(outputFormatter);
+        String end = endLocalDateTime.format(outputFormatter);
         final String url = STATS_URL_DOCKER + "/stats?start={start}&end={end}&uris={uris}&unique={unique}";
         ResponseEntity<List<StatsDto>> response = restTemplate.exchange(
                 url,

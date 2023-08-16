@@ -2,9 +2,11 @@ package com.github.explore_with_me.stats.output_dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@NoArgsConstructor
 public class StatsDto {
 
     private String app;

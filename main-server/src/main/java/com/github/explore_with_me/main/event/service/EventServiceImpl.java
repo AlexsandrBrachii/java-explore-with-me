@@ -308,7 +308,7 @@ public class EventServiceImpl implements EventService {
     }
 
     private long getViews(LocalDateTime start, LocalDateTime end, String[] uris, boolean unique) {
-        List<StatsDto> eventStats = statsClient.getStats(start, end, List.of(uris), unique);
+        List<StatsDto> eventStats = statsClient.getStats(start, end, uris, unique);
         return eventStats.get(0).getHits();
     }
 
