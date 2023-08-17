@@ -3,6 +3,8 @@ package com.github.explore_with_me.stats.controller;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import com.github.explore_with_me.stats.exception.BadRequestException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -31,8 +33,15 @@ public class StatsController {
     @GetMapping("/stats")
     public List<StatsDto> getStats(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime start,
                                    @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime end,
-                                   @RequestParam(required = false)  List<String> uris,
+                                   @RequestParam(required = false) List<String> uris,
                                    @RequestParam(defaultValue = "false") boolean unique) {
+        validateDates(start, end);
         return statsService.getStats(start, end, uris, unique);
+    }
+
+    private void validateDates(LocalDateTime start, LocalDateTime end) {
+        if (start.isAfter(end)) {
+            throw new BadRequestException();
+        }
     }
 }
